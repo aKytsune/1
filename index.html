@@ -9,7 +9,7 @@
 <body>
 
     <div id="torta-container">
-        <img id="torta-cookie" src="caminho/para/sua-imagem-de-torta-cookie.png" alt="Torta-cookie">
+        <img id="torta-cookie" src="https://i.imgur.com/k2R3R1v.png" alt="Torta-cookie">
     </div>
 
     <div id="site-container" class="oculto">
@@ -17,13 +17,16 @@
             <h1>Historie Coffee</h1>
         </header>
         <main>
-            <p>Seja bem-vindo(a) ao mundo do café! Aqui você encontrará as melhores histórias e sabores.</p>
+            <p>Seja bem-vindo(a) ao mundo do café! Descubra as melhores histórias e sabores.</p>
         </main>
     </div>
 
     <script>
+        // Quando a torta é clicada...
         document.getElementById('torta-cookie').addEventListener('click', function() {
+            // ...esconde o contêiner da torta
             document.getElementById('torta-container').style.display = 'none';
+            // ...e mostra o contêiner do site
             document.getElementById('site-container').style.display = 'block';
         });
     </script>

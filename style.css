@@ -1,9 +1,9 @@
-/* Paleta de cores inspirada em café e chocolate */
+/* Paleta de cores marrom */
 :root {
-    --marrom-escuro: #4E342E; /* Para textos principais e fundo */
-    --marrom-medio: #6D4C41;  /* Para elementos secundários */
-    --marrom-claro: #A1887F;  /* Para detalhes */
-    --creme: #efebe9;        /* Para textos em fundo escuro */
+    --marrom-escuro: #4E342E;
+    --marrom-medio: #6D4C41;
+    --creme: #efebe9;
+    --bege: #D7CCC8;
 }
 
 body {
@@ -14,47 +14,46 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: var(--marrom-medio); /* Cor de fundo da página */
-    color: var(--creme); /* Cor do texto padrão */
+    background-color: var(--marrom-medio);
+    color: var(--creme);
 }
 
-/* Estilos para o contêiner da torta */
 #torta-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer; /* Adiciona um cursor de mão para indicar que é clicável */
-    text-align: center;
+    cursor: pointer;
 }
 
 #torta-cookie {
-    width: 250px; /* Tamanho da imagem da torta */
+    width: 250px;
     height: auto;
-    transition: transform 0.3s ease; /* Adiciona uma animação suave */
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
 }
 
 #torta-cookie:hover {
-    transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+    transform: scale(1.05);
 }
 
-/* Estilos para o contêiner do site principal */
 #site-container {
-    display: none; /* Inicialmente oculto */
+    display: none; /* Oculto por padrão */
     width: 80%;
     max-width: 800px;
     padding: 2rem;
     background-color: var(--marrom-escuro);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
 h1 {
-    font-family: 'Georgia', serif; /* Fonte mais elegante para o título */
-    color: var(--creme);
+    font-family: 'Georgia', serif;
+    color: var(--bege);
     font-size: 3rem;
     margin-bottom: 1rem;
-    border-bottom: 2px solid var(--marrom-claro);
+    border-bottom: 2px solid var(--bege);
     padding-bottom: 0.5rem;
 }
 
