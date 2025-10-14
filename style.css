@@ -1,63 +1,384 @@
-/* Paleta de cores marrom */
+/* Paleta de Cores "Marrom Rosa" */
 :root {
-    --marrom-escuro: #4E342E;
-    --marrom-medio: #6D4C41;
-    --creme: #efebe9;
-    --bege: #D7CCC8;
+    --primary-color: #a0522d; /* Marrom suave (Coffee Brown) */
+    --secondary-color: #f7cac9; /* Rosa Queimado/Nude (Blush Pink) */
+    --accent-color: #e0b0af; /* Rosa Pálido/Terroso (Rosy Brown) */
+    --text-color-dark: #333; /* Cor do texto principal */
+    --text-color-light: #fff; /* Cor do texto claro */
+    --bg-light: #fff5ee; /* Fundo claro (Seashell) */
+    --border-color: #ccc;
+    --transition: all .3s linear;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+}
+
+html {
+    font-size: 62.5%; /* Facilita o uso de REM (1rem = 10px) */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: var(--marrom-medio);
-    color: var(--creme);
+    background: var(--bg-light);
+    color: var(--text-color-dark);
 }
 
-#torta-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+section {
+    padding: 2rem 7%;
+}
+
+/* Títulos das Seções */
+.heading {
+    text-align: center;
+    color: var(--text-color-dark);
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.heading span {
+    color: var(--primary-color);
+}
+
+/* Botão Padrão */
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    color: var(--text-color-light);
+    background: var(--primary-color);
     cursor: pointer;
+    border-radius: .5rem;
+    transition: var(--transition);
 }
 
-#torta-cookie {
-    width: 250px;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease;
+.btn:hover {
+    letter-spacing: .1rem;
+    background: var(--accent-color);
+    color: var(--text-color-dark);
 }
 
-#torta-cookie:hover {
-    transform: scale(1.05);
+/* ================== HEADER (Cabeçalho) ================== */
+.header {
+    background: var(--text-color-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 7%;
+    border-bottom: .1rem solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
-#site-container {
-    display: none; /* Oculto por padrão */
-    width: 80%;
-    max-width: 800px;
+.header .logo {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.header .navbar a {
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: var(--text-color-dark);
+    transition: var(--transition);
+}
+
+.header .navbar a:hover {
+    color: var(--accent-color);
+    border-bottom: .1rem solid var(--accent-color);
+    padding-bottom: .5rem;
+}
+
+/* Ícone do Menu (escondido por padrão) */
+.header .menu-btn {
+    color: var(--text-color-dark);
+    cursor: pointer;
+    font-size: 2.5rem;
+    display: none; /* Esconde em telas grandes */
+}
+
+/* ================== HOME (Início) ================== */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url('https://via.placeholder.com/1920x1080?text=Fundo+Cafeteria') no-repeat; /* Troque pela sua imagem de fundo! */
+    background-size: cover;
+    background-position: center;
+    padding-top: 10rem; /* Ajusta o padding para o header fixo */
+}
+
+.home .home-content {
+    max-width: 60rem;
+    background: rgba(255, 255, 255, 0.8);
     padding: 2rem;
-    background-color: var(--marrom-escuro);
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+}
+
+.home h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.home p {
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: var(--text-color-dark);
+}
+
+/* ================== MENU (Cardápio) ================== */
+.menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.menu .box-container .box {
+    text-align: center;
+    border: .1rem solid var(--border-color);
+    padding: 5rem;
+    border-radius: .5rem;
+    background: var(--text-color-light);
+    transition: var(--transition);
+}
+
+.menu .box-container .box:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.menu .box-container .box img {
+    height: 15rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.menu .box-container .box h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.menu .box-container .box p {
+    font-size: 1.5rem;
+    padding: .5rem 0;
+}
+
+.menu .box-container .box .price {
+    color: var(--text-color-dark);
+    font-size: 2.5rem;
+    font-weight: bolder;
+    display: block;
+    margin-top: 1rem;
+}
+
+/* ================== SOBRE NÓS ================== */
+.sobre .row {
+    display: flex;
+    align-items: center;
+    background: var(--text-color-light);
+    flex-wrap: wrap;
+}
+
+.sobre .row .image {
+    flex: 1 1 45rem;
+}
+
+.sobre .row .image img {
+    width: 100%;
+    display: block;
+}
+
+.sobre .row .content {
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.sobre .row .content h3 {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.sobre .row .content p {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+/* ================== CONTATO ================== */
+.contato .row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background: var(--text-color-light);
+}
+
+.contato .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
     text-align: center;
 }
 
-h1 {
-    font-family: 'Georgia', serif;
-    color: var(--bege);
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--bege);
-    padding-bottom: 0.5rem;
+.contato .row .iframe-container {
+    flex: 1 1 45rem;
+    padding: 5rem;
 }
 
-main p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+.contato .row .iframe-container iframe {
+    width: 100%;
+    height: 40rem;
+    border-radius: .5rem;
+}
+
+.contato .row form .box {
+    padding: 1rem;
+    font-size: 1.7rem;
+    color: var(--text-color-dark);
+    text-transform: none;
+    margin: .7rem 0;
+    border: .1rem solid var(--border-color);
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.contato .row form textarea {
+    resize: none;
+}
+
+/* ================== FOOTER (Rodapé) ================== */
+.footer {
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.footer .share a {
+    color: var(--text-color-light);
+    border: .1rem solid var(--text-color-light);
+    margin: .3rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.footer .share a:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color-dark);
+}
+
+.footer .links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    gap: 1rem;
+}
+
+.footer .links a {
+    padding: .7rem 2rem;
+    color: var(--text-color-light);
+    border: .1rem solid var(--text-color-light);
+    font-size: 2rem;
+    border-radius: .5rem;
+    transition: var(--transition);
+}
+
+.footer .links a:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color-dark);
+}
+
+.footer .credit {
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+    padding: 1.5rem;
+}
+
+/* ================== MEDIA QUERIES (Responsividade) ================== */
+
+@media (max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+    .header {
+        padding: 1.5rem 2rem;
+    }
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width:768px) {
+    /* Exibe o botão de menu em telas menores */
+    .header .menu-btn {
+        display: inline-block;
+    }
+
+    /* Oculta o menu de navegação padrão */
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: var(--text-color-light);
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+        transition: right .3s linear;
+        border-left: .1rem solid var(--border-color);
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    /* Mostra o menu quando a classe 'active' for adicionada pelo JS */
+    .header .navbar.active {
+        right: 0;
+    }
+
+    .header .navbar a {
+        color: var(--text-color-dark);
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+        border: none;
+        border-bottom: .1rem solid var(--border-color);
+    }
+
+    .home .home-content {
+        text-align: center;
+    }
+
+    .home h1 {
+        font-size: 4.5rem;
+    }
+}
+
+@media (max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+    .heading {
+        font-size: 3.5rem;
+    }
+    .contato .row .iframe-container {
+        padding: 2rem;
+    }
 }
